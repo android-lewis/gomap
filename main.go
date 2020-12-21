@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"endpoints/scanner"
+	"github.com/android-lewis/gomap/endpoints/scanner"
 	"github.com/gorilla/mux"
 )
 

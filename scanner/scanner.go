@@ -1,4 +1,4 @@
-package endpoints
+package scanner
 
 import (
 	"fmt"

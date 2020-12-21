@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/android-lewis/scanner"
+	"github.com/android-lewis/gomap/scanner"
 	"github.com/gorilla/mux"
 )
 
@@ -17,7 +17,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 func handleRequests() {
 	myRouter := mux.NewRouter().StrictSlash(true)
 
-	myRouter.HandleFunc("/", scanner.scan)
+	myRouter.HandleFunc("/", scanner.Scan)
 	log.Fatal(http.ListenAndServe(":10000", nil))
 }
 

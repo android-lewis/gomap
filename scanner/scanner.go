@@ -6,7 +6,7 @@ import (
 )
 
 //Scan functionality
-func scan(w http.ResponseWriter, r *http.Request) {
+func Scan(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(w, "Welcome to the Scanner!")
 	fmt.Println("Endpoint Hit: Scanner")
 }

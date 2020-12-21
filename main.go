@@ -12,17 +12,30 @@ import (
 )
 
 func main() {
+
 	var host string
 	var port string
 	app := &cli.App{
-		Name:  "GoMap",
-		Usage: "Scan ports with Go",
+		Name:     "gomap",
+		Version:  "v1.0.0",
+		Compiled: time.Now(),
+		Authors: []*cli.Author{
+			&cli.Author{
+				Name:  "Lewis Baston",
+				Email: "lewis@baston.dev",
+			},
+		},
+		HelpName:  "Menu",
+		Usage:     "[ip] [args]",
+		UsageText: "--ip 10.10.10.10 [args]",
+		ArgsUsage: "[args and such]",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:        "host",
 				Aliases:     []string{"ip"},
 				Usage:       "IP adress of the host",
 				Destination: &host,
+				Required:    true,
 			},
 			&cli.StringFlag{
 				Name:        "port",
@@ -33,7 +46,7 @@ func main() {
 		},
 		Action: func(c *cli.Context) error {
 			fmt.Println("Running GoMap")
-			dailer(port, host)
+			dialer(port, host)
 			return nil
 		},
 	}
@@ -44,7 +57,7 @@ func main() {
 	}
 }
 
-func dailer(port, ip string) {
+func dialer(port, ip string) {
 	var d net.Dialer
 	ctx, cancel := context.WithTimeout(context.Background(), time.Minute)
 	defer cancel()

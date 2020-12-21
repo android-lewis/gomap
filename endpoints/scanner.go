@@ -1,9 +1,12 @@
 package endpoints
 
-import "fmt"
+import (
+	"fmt"
+	"http"
+)
 
-//Scanner functionality
-func Scan() {
-	fmt.Println("Welcome to the Scanner!")
+//Scan functionality
+func Scan(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(w, "Welcome to the Scanner!")
 	fmt.Println("Endpoint Hit: Scanner")
 }

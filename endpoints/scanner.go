@@ -2,7 +2,7 @@ package endpoints
 
 import (
 	"fmt"
-	"http"
+	"net/http"
 )
 
 //Scan functionality
